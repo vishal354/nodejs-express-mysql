@@ -1,0 +1,27 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/tutorial-app
+
+permissions:
+  - object: /var/www/tutorial-app
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+
+hooks:
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 100
+      runas: ubuntu
+
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 100
+      runas: ubuntu
+
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 100
+      runas: ubuntu
