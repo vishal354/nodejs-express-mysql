@@ -1,3 +1,10 @@
 First create an autoscaling group using a launch template
 Then create a application project deployment group
 Then create a pipeline to deploy the project
+
+
+1. Create a ec2_backend_role with admin access
+2. Create a launch template
+3. Using this launch template, create a autoscaling group
+4. Create a codedeploy_backend_role to be used for code deploy
+5. Create an application and deployment group

@@ -3,5 +3,5 @@
 # (e.g., dependencies installation)
 
 # Example: Install Node.js dependencies
-cd /var/www/tutorial-app
-npm install
+cd /home/ubuntu/tutorial-app
+sudo npm install

@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/tutorial-app
+    destination: /home/ubuntu/tutorial-app
 
 permissions:
-  - object: /var/www/tutorial-app
+  - object: /home/ubuntu/tutorial-app
     pattern: "**"
     owner: ubuntu
     group: ubuntu
