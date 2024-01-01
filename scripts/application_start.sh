@@ -2,7 +2,7 @@
 # Start the Node.js application using PM2
 
 # Navigate to the application directory
-cd /home/ubuntu/tutorial-app
+cd /home/ubuntu/nodejs
 
 # Start the Node.js application using PM2
 sudo pm2 start app.js --name "tutorial-app" # Replace "app.js" with your entry file
