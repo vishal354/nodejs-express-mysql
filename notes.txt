@@ -1,0 +1,3 @@
+First create an autoscaling group using a launch template
+Then create a application project deployment group
+Then create a pipeline to deploy the project
