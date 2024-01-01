@@ -69,3 +69,16 @@ npm install
 ```
 node server.js
 ```
+
+### Create the table in database named test
+```
+CREATE DATABASE test;
+USE test;
+
+CREATE TABLE tutorials (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  published BOOLEAN NOT NULL
+);
+```

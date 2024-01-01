@@ -7,8 +7,11 @@ files:
 permissions:
   - object: /home/ubuntu/tutorial-app
     pattern: "**"
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
+    mode: 777
+    type:
+      - file
 
 # hooks:
 #   BeforeInstall:

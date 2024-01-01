@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
   database: dbConfig.DB,
   ssl: {
     // Enable SSL/TLS
-    rejectUnauthorized: true, // Set to false if using self-signed certificates (not recommended for production)
+    rejectUnauthorized: false, // Set to false if using self-signed certificates (not recommended for production)
   },
 });
 
