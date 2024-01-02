@@ -4,11 +4,13 @@ const cors = require("cors");
 
 const app = express();
 
+const frontendURL = "http://turorial-frontend-1234.s3-website-us-east-1.amazonaws.com"
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: frontendURL
 };
 
 app.use(cors(corsOptions));
+// app.use(cors())
 
 // parse requests of content-type - application/json
 app.use(express.json()); /* bodyParser.json() is deprecated */
