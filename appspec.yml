@@ -4,11 +4,17 @@ files:
   - source: /  # Copies all files from the root of the S3 bundle
     destination: /home/ubuntu/nodejs  # Destination on the EC2 instance
 
+permissions:
+  - object: /var/www/
+    owner: root
+    group: root
+    mode: 777
+
 hooks:
-  BeforeInstall:
-    - location: scripts/before_install.sh
-      timeout: 20  # 5 minutes timeout
-      runas: root
+  # BeforeInstall:
+  #   - location: scripts/before_install.sh
+  #     timeout: 20  # 5 minutes timeout
+  #     runas: root
   AfterInstall:
     - location: scripts/after_install.sh
       timeout: 20
