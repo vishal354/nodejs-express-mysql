@@ -82,3 +82,11 @@ CREATE TABLE tutorials (
   published BOOLEAN NOT NULL
 );
 ```
+
+
+### Environment Variables Required
+
+DB_HOST=<your_db_host>
+DB_USERNAME=<your_username>
+DB_PASSWORD=<your_password>
+DB_NAME=<your_db_name>
