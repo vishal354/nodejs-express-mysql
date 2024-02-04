@@ -20,8 +20,8 @@ phases:
       - echo "Building Docker Image"
       - echo "Build Number $CODEBUILD_BUILD_NUMBER"
       - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL" 
-      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_USERNAME/nodeapp-backend:$CODEBUILD_BUILD_NUMBER" .
-      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_USERNAME/nodeapp-backend:$CODEBUILD_BUILD_NUMBER"
+      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_USERNAME/backend-nodeapp:$CODEBUILD_BUILD_NUMBER" .
+      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_USERNAME/backend-nodeapp:$CODEBUILD_BUILD_NUMBER"
       
   post_build:
     commands:
