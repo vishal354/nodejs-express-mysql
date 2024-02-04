@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  parameter-store:
+      DOCKER_USERNAME: /docker/username
+      DOCKER_PASSWORD: /docker/password
+      DOCKER_REGISTRY_URL: /nodebackend/docker/url
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+      
+  pre_build:
+    commands:
+      - echo "Prebuild phase started and finished"
+      
+  build:
+    commands:
+      - echo "Building Docker Image"
+      - echo "Build Number $CODEBUILD_BUILD_NUMBER"
+      - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL" 
+      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_USERNAME/nodeapp-backend:$CODEBUILD_BUILD_NUMBER" .
+      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_USERNAME/nodeapp-backend:$CODEBUILD_BUILD_NUMBER"
+      
+  post_build:
+    commands:
+      - echo "Build is Successful"
